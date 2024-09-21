@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .gallery {
+            width: 900px;
+            display: flex;
+            overflow-x: scroll;
+        }
+
+        .gallery div {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 20px;
+            padding: 10px;
+            flex: none
+        }
+
+        .gallery div img {
+            width: 100%;
+            transition: transform 0.5s;
+        }
+
+        .gallery div img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        .gallery::-webkit-scrollbar {
+            display: none;
+        }
+
+        .gallery-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body class="font-poppins bg-neutral-100">
+    <div class="box-border">
+        <!-- Nav Bar -->
+        <nav class=" fixed top-0 w-full flex justify-between bg-black bg-opacity-30">
+            <img src="logo.jpg" class="h-16 w-auto" alt="">
+            <ul class="list-none flex gap-7 items-center text-white mr-5 ">
+                <li><a href="">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="">Contacts Us</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hero video Section -->
+        <div class="aspect-w-1 aspect-h-1">
+            <video autoplay loop muted class="w-full h-full">
+                <source src="images/main-video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <!-- Company Details -->
+        <div class=" grid md:grid-cols-2 items-center gap-9 justify-center my-9 w-4/5 m-auto">
+            <div class="text-center items-center">
+                <img src="logo.jpg " class="m-auto h-24" alt="">
+                <h1 class="font-protestGuerrilla text-4xl mb-5 text-gray-700">
+                    Wajdan Farooq Chemicals
+                </h1>
+                <p class="text-sm md:text-lg">We provide innovative, eco-friendly fertilizers designed to boost crop
+                    yield and
+                    improve soil health. Our products are tailored to meet the unique needs of various crops,
+                    ensuring optimal growth and sustainable farming.
+                    Partner with us for high-quality solutions that drive agricultural success.</p>
+            </div>
+
+            <div class="h-96 w-auto flex items-center">
+                <img name="slide" width="auto" class="rounded-xl border-4 border-gray-200" />
+            </div>
+        </div>
+
+        <!-- Products list -->
+
+        <div class="mb-10">
+            <!-- Products list for desktop-->
+            <div id="products" class="hidden md:block">
+                <div>
+                    <h1 class="text-center text-green-600 text-3xl font-bold">Our Products</h1>
+                </div>
+                <div class="gallery-wrap w-4/5 my-9 hidden md:block">
+
+                    <i class="fa-solid fa-arrow-left bg-green-200 p-2 rounded-full" id="backBtn"></i>
+                    <div class="gallery border-8 border-gray-500 m-10 rounded-2xl p-10">
+
+                        <div class="items-center h-72 w-auto">
+                            <img src="images/product7.jpg" class=" shadow-2xl h-60 m-auto" alt="">
+                            <img src="images/product6.jpg" class=" shadow-2xl h-60 m-auto " alt="">
+                            <img src="images/product9.jpg" class=" shadow-2xl h-60 m-auto" alt="">
+                        </div>
+
+                        <div class="items-center h-72 w-auto">
+                            <img src="images/product3.jpg" class=" shadow-2xl h-60 m-auto" alt="">
+                            <img src="images/product5.jpg" class=" shadow-2xl h-60 m-auto" alt="">
+                            <img src="images/product8.jpg" class=" shadow-2xl h-60 m-auto " alt="">
+                        </div>
+
+                        <div class="items-center h-72 w-auto">
+                            <img src="images/product1.jpg" class=" shadow-2xl h-60 m-auto " alt="">
+                            <img src="images/product2.jpg" class=" shadow-2xl h-60 m-auto" alt="">
+                            <img src="images/product4.jpg" class=" shadow-2xl h-60 m-auto" alt="">
+
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right bg-green-200  p-2 rounded-full" id="nextBtn"></i>
+                </div>
+            </div>
+
+
+            <!-- products list for mobile screen -->
+            <div class="relative overflow-hidden w-full max-h-screen block md:hidden"> <!-- Slider Container -->
+                <div class="slider flex transition-transform duration-500"> <!-- Slider -->
+                    <div class="slide flex justify-center items-center min-w-full"> <!-- Slide 1 -->
+                        <img src="images/product1.jpg" alt="Product 1" class="w-auto h-60 max-h-full object-contain rounded-xl">
+                    </div>
+                    
+                    <div class="slide  flex justify-center items-center min-w-full"> <!-- Slide 4 -->
+                        <img src="images/product4.jpg" alt="Product 4" class="w-auto h-60 max-h-full object-contain rounded-xl">
+                    </div>
+                    <div class="slide  flex justify-center items-center min-w-full"> <!-- Slide 4 -->
+                        <img src="images/product5.jpg" alt="Product 5" class="w-auto h-60 max-h-full object-contain rounded-xl">
+                    </div>
+                    <div class="slide  flex justify-center items-center min-w-full"> <!-- Slide 4 -->
+                        <img src="images/product6.jpg" alt="Product 6" class="w-auto h-60 max-h-full object-contain rounded-xl">
+                    </div>
+                    <div class="slide  flex justify-center items-center min-w-full"> <!-- Slide 4 -->
+                        <img src="images/product8.jpg" alt="Product 8" class="w-auto h-60 max-h-full object-contain rounded-xl">
+                    </div>
+                    <div class="slide  flex justify-center items-center min-w-full"> <!-- Slide 4 -->
+                        <img src="images/product9.jpg" alt="Product 9" class="w-auto h-60 max-h-full object-contain rounded-xl">
+                    </div>
+                    <div class="slide  flex justify-center items-center min-w-full"> <!-- Slide 2 -->
+                        <img src="images/product2.jpg" alt="Product 2" class="w-auto h-60 max-h-full object-contain rounded-xl">
+                    </div>
+                    <div class="slide  flex justify-center items-center min-w-full"> <!-- Slide 3 -->
+                        <img src="images/product3.jpg" alt="Product 3" class="w-auto h-60 max-h-full object-contain rounded-xl">
+                    </div>
+                    <div class="slide  flex justify-center items-center min-w-full"> <!-- Slide 4 -->
+                        <img src="images/product7.jpg" alt="Product 7" class="w-auto h-60 max-h-full object-contain rounded-xl">
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button
+                    class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 z-10">&lt;</button>
+                <button
+                    class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 z-10">&gt;</button>
+            </div>
+        </div>
+
+        <!-- Our team -->
+        <div class="w-4/5 m-auto font-playpenSans bg-neutral-300 rounded-2xl py-5 px-10">
+            <p class="text-sm md:text-xl font-bold text-gray-600"> <span class="text-green-600 text-xl font-bold">"
+                </span>At Wajdan Farooq Chemicals, we are committed to providing
+                eco-friendly, high-quality fertilizers that ensure optimal
+                plant growth while protecting the environment. Trust our expertise to nurture your crops and gardens
+                sustainably.<span class="text-green-600 text-xl font-bold">"</span></p>
+        </div>
+
+        <!-- footer -->
+        <div class="flex justify-between p-5 mt-10 bg-gray-600">
+            <div class="text-neutral-300 ">
+                <h1 class="font-protestGuerrilla text-xl md:text-2xl mb-5">Wajdan Farooq Chemicals</h1>
+                <p class="text-xs md:text-sm">Address: 123/A, West coast Pakistan</p>
+                <p class="text-xs md:text-sm">Ph: 9875433357</p>
+                <p class="text-xs md:text-sm">Contact: abc@gmail.com</p>
+            </div>
+            <div>
+                <img src="logo.jpg" alt="" class="h-14 md:h-20 rounded-2xl">
+                <div class="flex text-2xl gap-5 justify-center mt-5">
+                    <i class="fa-brands fa-instagram text-red-800"></i>
+                    <i class="fa-brands fa-facebook text-blue-700"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        // HERO SEC IMAGE SLIDESHOW
+        var i = 0; 			// Start Point
+        var images = [];	// Images Array
+        var time = 3000;	// Time Between Switch
+
+        // Image List
+        images[0] = "images/slide1.jpeg";
+        images[1] = "images/slide2.jpg";
+        images[2] = "images/slide3.jpeg";
+        images[3] = "images/slide4.jpeg";
+
+        // Change Image
+        function changeImg() {
+            document.slide.src = images[i];
+
+            // Check If Index Is Under Max
+            if (i < images.length - 1) {
+                // Add 1 to Index
+                i++;
+            } else {
+                // Reset Back To O
+                i = 0;
+            }
+
+            // Run function every x seconds
+            setTimeout("changeImg()", time);
+        }
+
+        // Run function when page loads
+        window.onload = changeImg;
+
+
+
+        //PRODUCTS LIST IN DESCKTOP
+        let scrollContainer = document.querySelector('.gallery')
+        let backBtn = document.getElementById('backBtn');
+        let nextBtn = document.getElementById('nextBtn');
+
+        scrollContainer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            scrollContainer.scrollLeft += e.deltaY;
+            scrollContainer.style.scrollBehavior = 'auto';
+        })
+
+        nextBtn.addEventListener('click', () => {
+            scrollContainer.style.scrollBehavior = 'smooth';
+            scrollContainer.scrollLeft += 300;
+        })
+        backBtn.addEventListener('click', () => {
+            scrollContainer.style.scrollBehavior = 'smooth';
+            scrollContainer.scrollLeft -= 300;
+        })
+
+
+        // PRODUCTS LIST IN MOBILE SCREEN
+        const slider = document.querySelector('.slider');  // Slider container
+        const slides = document.querySelectorAll('.slide');  // Each slide
+        let currentIndex = 0;
+
+        document.querySelector('.right-4').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        });
+
+        document.querySelector('.left-4').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+</body>
+
+</html>
